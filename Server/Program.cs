@@ -1,8 +1,4 @@
-﻿using MihaZupan;
-using System;
-using System.Net.Http;
-
-namespace Butterfly 
+﻿namespace Butterfly 
 {
     class Program
     {

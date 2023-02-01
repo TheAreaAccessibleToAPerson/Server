@@ -43,7 +43,6 @@ namespace Butterfly
             {
                 if (IsSyn1 == false)
                 {
-                    //Console(pNetworkPackets.GetString("ConnectingTLS:SYN 1"));
                     IsSyn1 = true;
                     DestinationServerAddress = pNetworkPacket.GetDestinationAddress();
 
@@ -115,37 +114,13 @@ namespace Butterfly
             }
             else if (pNetworkPacket.IsAck())
             {  
-                /*
-                if (pNetworkPackets.SourcePort == ClientPort1)
-                {
-                    //Console(pNetworkPackets.GetString("ConnectingTLS:ACK 1"));
-                    SendToParentListener<ConnectingTLS, Hellper.VPN.SeqAckNumber>(new Hellper.VPN.SeqAckNumber()
-                    {
-                        IndexInArray = Local.Buffer.TLSPorts.Index,
-                        SocketNumber = Data.SOCKET_1,
-                        Acknowledgment = pNetworkPackets.AcknowledgmentNumber,
-                        Sequence = pNetworkPackets.SequenceNumber
-                    });
-
-                    //Console(pNetworkPackets.GetPacketString());
-                }
-                else if (pNetworkPackets.SourcePort == ClientPort2)
-                {
-                    //Console(pNetworkPackets.GetString("ConnectingTLS:ACK 2"));
-                    SendToParentListener<ConnectingTLS, Hellper.VPN.SeqAckNumber>(new Hellper.VPN.SeqAckNumber()
-                    {
-                        IndexInArray = Local.Buffer.TLSPorts.Index,
-                        SocketNumber = Data.SOCKET_2,
-                        Acknowledgment = pNetworkPackets.AcknowledgmentNumber,
-                        Sequence = pNetworkPackets.SequenceNumber
-                    });
-                }
-                */
+                //...
             }
             else if (pNetworkPacket.IsAckPush())
             {
                 if (pNetworkPacket.SourcePort == ClientPort1)
                 {
+                    /*
                     SendToParentListener<ConnectingTLS, Hellper.VPN.SeqAckNumber>(new Hellper.VPN.SeqAckNumber()
                     {
                         IndexInArray = Local.Buffer.TLSPorts.Index,
@@ -153,11 +128,13 @@ namespace Butterfly
                         Acknowledgment = pNetworkPacket.AcknowledgmentNumber,
                         Sequence = -1
                     });
+                    */
 
                     Sockets[Data.SOCKET_1].Send(pNetworkPacket.Data, pNetworkPacket.StartIndexSegments, pNetworkPacket.EndIndexSegments);
                 }
                 else if (pNetworkPacket.SourcePort == ClientPort2)
                 {
+                    /*
                     SendToParentListener<ConnectingTLS, Hellper.VPN.SeqAckNumber>(new Hellper.VPN.SeqAckNumber()
                     {
                         IndexInArray = Local.Buffer.TLSPorts.Index,
@@ -165,11 +142,13 @@ namespace Butterfly
                         Acknowledgment = pNetworkPacket.AcknowledgmentNumber,
                         Sequence = -1
                     });
+                    */
 
                     Sockets[Data.SOCKET_2].Send(pNetworkPacket.Data, pNetworkPacket.StartIndexSegments, pNetworkPacket.EndIndexSegments);
                 }
                 else if (pNetworkPacket.SourcePort == ClientPort3)
                 {
+                    /*
                     SendToParentListener<ConnectingTLS, Hellper.VPN.SeqAckNumber>(new Hellper.VPN.SeqAckNumber()
                     {
                         IndexInArray = Local.Buffer.TLSPorts.Index,
@@ -177,6 +156,7 @@ namespace Butterfly
                         Acknowledgment = pNetworkPacket.AcknowledgmentNumber,
                         Sequence = -1
                     });
+                    */
 
                     Sockets[Data.SOCKET_3].Send(pNetworkPacket.Data, pNetworkPacket.StartIndexSegments, pNetworkPacket.EndIndexSegments);
                 }

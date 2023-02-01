@@ -62,9 +62,9 @@
             } 
         }
 
-        public Buffer.IndexedByte SubstitutionOfFields(Buffer.NetPacket pNetworkPacketsBuffer)
+        public Buffer.IndexedByte SubstitutionOfFields(Buffer.NetPacket pNetworkPacket)
         {
-            return PortController.SubstitutionOfFields(pNetworkPacketsBuffer);
+            return PortController.SubstitutionOfFields(pNetworkPacket);
         }
 
 

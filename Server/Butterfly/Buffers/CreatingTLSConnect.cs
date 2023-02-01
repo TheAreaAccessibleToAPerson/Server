@@ -2,7 +2,7 @@
 {
     public struct CreatingTLSConnect : IBuffer
     {
-        public NetPackets NetworkPacket;
+        public NetPacket NetworkPacket;
 
         public string GetName()
         {

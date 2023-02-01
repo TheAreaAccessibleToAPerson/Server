@@ -49,11 +49,11 @@
            
             AddHandler<ClientSocketTCP.x10>(Local.Buffer)
                 .redirect_to<ParallelProccesing<Buffer.Byte>.x20_1>()
-                .redirect_to<Analiz.NetPackets>()
-                .redirect_to<Buffer.NetPackets>(ConnectionController.ReceiveNetworkPackets);
+                .redirect_to<Analiz.NetPacket>()
+                .redirect_to<Buffer.NetPacket>(ConnectionController.ReceiveNetworkPackets);
 
-            AddHandler<Echo<Buffer.NetPackets>.Parent>()
-                .redirect_to<Buffer.NetPackets, Buffer.IndexedByte>(ConnectionController.SubstitutionOfFields)
+            AddHandler<Echo<Buffer.NetPacket>.Parent>()
+                .redirect_to<Buffer.NetPacket, Buffer.IndexedByte>(ConnectionController.SubstitutionOfFields)
                 .redirect_to(GetHandler<ClientSocketTCP.x10>);
 
             AddHandler<Echo<Hellper.VPN.ClientPorts.ClientTLSPorts>.Children<ConnectingTLS>>()
@@ -84,16 +84,16 @@
         {
             AddHandler<ConnectingTLS, ConnectingHTTP>(Local.Buffer);
            
-            AddHandler<Echo<Buffer.NetPackets>.Parent>()
-                .redirect_to((networkPackets) => 
+            AddHandler<Echo<Buffer.NetPacket>.Parent>()
+                .redirect_to((networkPacket) => 
                 {
-                    if (networkPackets.DestinationPort == 443)
+                    if (networkPacket.DestinationPort == 443)
                     {
-                        GetHandler<ConnectingTLS>().input_to(networkPackets);
+                        GetHandler<ConnectingTLS>().input_to(networkPacket);
                     }
-                    else if (networkPackets.DestinationPort == 80)
+                    else if (networkPacket.DestinationPort == 80)
                     {
-                        GetHandler<ConnectingHTTP>().input_to(networkPackets);
+                        GetHandler<ConnectingHTTP>().input_to(networkPacket);
                     }
                 });
         }

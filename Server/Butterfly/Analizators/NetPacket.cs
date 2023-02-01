@@ -1,6 +1,6 @@
 ﻿namespace Butterfly.Analiz
 {
-    class NetPackets : Analizator<Buffer.Byte, Buffer.NetPackets>
+    class NetPacket : Analizator<Buffer.Byte, Buffer.NetPacket>
     {
         protected override void Process(Buffer.Byte pValue)
         {
@@ -22,7 +22,7 @@
                     if (StepNumber++ >= STEP_COUNT) return;
                 }
 
-                Buffer.NetPackets netPackets = new Buffer.NetPackets();
+                Buffer.NetPacket netPackets = new Buffer.NetPacket();
 
                 netPackets.StartIndexIPPacket = index; // С данного индекса начинается чтение заголовка IP пакета.
                 // Читаем IP пакет.

@@ -33,7 +33,7 @@
             PortController.SetSeqAckNumberHTTPConnection(pSeqAckNumber);
         }
 
-        public void ReceiveNetworkPackets(Buffer.NetPackets pNetworkPackets)
+        public void ReceiveNetworkPackets(Buffer.NetPacket pNetworkPackets)
         {
             string key = pNetworkPackets.GetDestinationAddress().ToString();
 
@@ -62,7 +62,7 @@
             } 
         }
 
-        public Buffer.IndexedByte SubstitutionOfFields(Buffer.NetPackets pNetworkPacketsBuffer)
+        public Buffer.IndexedByte SubstitutionOfFields(Buffer.NetPacket pNetworkPacketsBuffer)
         {
             return PortController.SubstitutionOfFields(pNetworkPacketsBuffer);
         }

@@ -7,7 +7,7 @@
         public int Port;
         public int Size;
 
-        public NetPackets FirstPacket;
+        public NetPacket FirstPacket;
 
         public const int BUFFER_SIZE = 32000;
 

@@ -216,7 +216,7 @@
             }
         }
 
-        public Buffer.IndexedByte SubstitutionOfFields(Buffer.NetPackets pNetworkPackets)
+        public Buffer.IndexedByte SubstitutionOfFields(Buffer.NetPacket pNetworkPackets)
         {
             lock(Locker)
             {

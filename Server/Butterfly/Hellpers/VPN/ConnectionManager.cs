@@ -29,7 +29,7 @@
         public void FreePorts(Buffer.Client pClientBuffer)
         {
         }
-        public void SendPacketToClient(Buffer.NetPackets pNetworkPackets)
+        public void SendPacketToClient(Buffer.NetPacket pNetworkPackets)
         {
             if (pNetworkPackets.GetSourceAddress().ToString() == "185.215.4.10")
             {

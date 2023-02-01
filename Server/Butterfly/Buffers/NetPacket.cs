@@ -1,6 +1,6 @@
 ﻿namespace Butterfly.Buffer
 {
-    public struct NetPackets : IBuffer
+    public struct NetPacket : IBuffer
     {
 
 
@@ -119,7 +119,7 @@
 
         public string GetName()
         {
-            return typeof(NetPackets).Name;
+            return typeof(NetPacket).Name;
         }
     }
 }

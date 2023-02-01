@@ -1,6 +1,6 @@
 ﻿namespace Butterfly
 {
-    public sealed class ConnectingHTTP : HandlerLocalBuffer<Buffer.Connecting, Buffer.NetPackets, Buffer.Empty>
+    public sealed class ConnectingHTTP : HandlerLocalBuffer<Buffer.Connecting, Buffer.NetPacket, Buffer.Empty>
     {
         public struct Data
         {
@@ -29,7 +29,7 @@
             Sockets = AddHandler<SocketTCP>(Data.SOCKET_1.ToString(), Data.SOCKET_2.ToString());
         }
 
-        private void Process(Buffer.NetPackets pNetworkPackets)
+        private void Process(Buffer.NetPacket pNetworkPackets)
         {
             if (pNetworkPackets.IsSyn())
             {

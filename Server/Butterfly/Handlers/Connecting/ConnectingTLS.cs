@@ -2,7 +2,7 @@
 
 namespace Butterfly
 {
-    public class ConnectingTLS : HandlerLocalBuffer<Buffer.Connecting, Buffer.NetPackets, Buffer.Empty>
+    public class ConnectingTLS : HandlerLocalBuffer<Buffer.Connecting, Buffer.NetPacket, Buffer.Empty>
     {
         private struct Data
         {
@@ -21,7 +21,7 @@ namespace Butterfly
 
         private System.Net.IPAddress DestinationServerAddress;
 
-        private Buffer.NetPackets FirstClientHello;
+        private Buffer.NetPacket FirstClientHello;
 
         private SocketTCP[] Sockets;
 
@@ -37,7 +37,7 @@ namespace Butterfly
             Sockets = AddHandler<SocketTCP>(Data.SOCKET_1.ToString(), Data.SOCKET_2.ToString(), Data.SOCKET_3.ToString());
         }
 
-        private void Process(Buffer.NetPackets pNetworkPackets) 
+        private void Process(Buffer.NetPacket pNetworkPackets) 
         {
             if (pNetworkPackets.IsSyn())
             {

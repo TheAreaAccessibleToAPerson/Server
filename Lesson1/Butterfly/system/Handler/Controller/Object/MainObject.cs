@@ -481,7 +481,7 @@ namespace Butterfly.system
         {
             if (__IsCreating)
             {
-                Exception(Ex.MOBJ.x100042);
+                Exception(Ex.MOBJ.x100041);
             }
             else
             {
@@ -500,7 +500,7 @@ namespace Butterfly.system
         {
             if (__IsCreating)
             {
-                Exception(Ex.MOBJ.x100042);
+                Exception(Ex.MOBJ.x100041);
             }
             else
             {
@@ -525,7 +525,7 @@ namespace Butterfly.system
         {
             if (__IsCreating)
             {
-                Exception(Ex.MOBJ.x100042);
+                Exception(Ex.MOBJ.x100041);
             }
             else
             {
@@ -541,7 +541,7 @@ namespace Butterfly.system
         {
             if (__IsCreating)
             {
-                Exception(Ex.MOBJ.x100042);
+                Exception(Ex.MOBJ.x100041);
             }
             else 
             {

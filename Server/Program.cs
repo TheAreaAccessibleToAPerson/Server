@@ -1,4 +1,7 @@
-﻿namespace Butterfly 
+﻿using System;
+using System.Linq;
+
+namespace Butterfly 
 {
     class Program
     {

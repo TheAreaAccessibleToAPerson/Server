@@ -42,7 +42,7 @@
         private readonly System.Action[] DependencyCallObjects = new System.Action[128];
         private int DependencyCount = 0;
 
-        public void AddBuffer(InputBufferType pValue)
+        public void input_to(InputBufferType pValue)
         {
             ToInput(pValue);
         }

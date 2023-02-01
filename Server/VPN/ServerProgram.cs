@@ -89,11 +89,11 @@
                 {
                     if (networkPackets.DestinationPort == 443)
                     {
-                        GetHandler<ConnectingTLS>().AddBuffer(networkPackets);
+                        GetHandler<ConnectingTLS>().input_to(networkPackets);
                     }
                     else if (networkPackets.DestinationPort == 80)
                     {
-                        GetHandler<ConnectingHTTP>().AddBuffer(networkPackets);
+                        GetHandler<ConnectingHTTP>().input_to(networkPackets);
                     }
                 });
         }
